@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import Flip from './Flip'
+import Dice from './Dice'
 
 
 
 function Games() {
-  const [showFlip, setShowFlip] = useState(false)
+  const [showDice, setShowDice] = useState(false)
   
   return (
 
     <div className='games' >
       <div className="container">
       
-       <button className='btn-caro'  onClick={() => setShowFlip(!showFlip)}><h3>Caro</h3></button>
+       <button className='btn-caro'  onClick={() => setShowDice(!showDice)}><h3>Dice</h3></button>
        <button className='btn-baucua'><h3>Bầu cua</h3></button>
-       {showFlip && <Flip />}
+       {showDice && <Dice />}
       </div>
     </div>
   )
