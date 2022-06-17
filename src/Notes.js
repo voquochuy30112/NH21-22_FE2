@@ -29,7 +29,22 @@ function Notes() {
 
   const [searchNote, setSearchNote] = useState('');
   const [darkMode, setDarkMode] = useState(false)
-  
+  const [showGoToTop, setShowGoToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 150) {
+        //show
+        setShowGoToTop(true)
+      }
+      else {
+        //hide
+        setShowGoToTop(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+  })
+
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'))
     if (savedNotes) {
@@ -40,7 +55,7 @@ function Notes() {
   useEffect(() => {
     localStorage.setItem('react-notes-app-data', JSON.stringify(notes))
   }, [notes])
- 
+
   const addNote = (text) => {
 
     const date = new Date();
@@ -64,6 +79,18 @@ function Notes() {
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearch={setSearchNote} />
         <NotesList notes={notes.filter((note) => note.text.toLowerCase().includes(searchNote))} handleAddNote={addNote} handleDelete={deletingNote} />
+        {showGoToTop && (
+          <button
+            style={{
+              position: 'fixed',
+              right: 80,
+              background: 'red',
+              bottom: 20,
+            }}
+          >
+            Go to Top
+          </button>
+        )}
       </div>
     </div>
   )
