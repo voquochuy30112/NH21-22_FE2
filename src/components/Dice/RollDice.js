@@ -33,11 +33,11 @@ const RollDice = ({ sides }) => {
         <>
             <div className="roll-dice">
                 <div className="reolldice-c ontainer">
-                    <Die face={String(die1)} rolling={rolling}></Die>
+                    <Die face={String(die1)} rolling={rolling} ></Die>
                     <Die face={String(die2)} rolling={rolling}></Die>
                 </div>
                 <button onClick={roll} disabled={rolling}>
-                    {rolling ? "rolling..." : "Roll Dice"}
+                    {rolling ? "Rolling..." : "Roll Dice"}
                 </button>
                 <h2>Total Score: {totalScore}</h2>
             </div>
