@@ -5,8 +5,7 @@
 }
 
 .shaking {
-    animation-name: wobble ;
-    animation-duration: 1s;
+    animation: wobble 1s;
 }
 
 @keyframes wobble {

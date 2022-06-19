@@ -1,11 +1,12 @@
 .roll-dice{
     display: flex;
     flex-flow: column nowrap;
-    min-height: 100hv;
+    height: 75vh;
     background: pink;
+    border: blue 5px solid;
 }
 
-.rolldice-container{
+.reolldice-container{
     display: flex;
     justify-content: center;
     align-content: center;
