@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import NotesList from './components/Node/NotesList'
+import NotesList from './NotesList'
 import { nanoid } from 'nanoid'
-import Search from './components/Node/Search';
-import Header from './components/Node/Header';
+import Search from './Search';
+import Header from './Header';
 
 
 function Notes() {
@@ -73,6 +73,7 @@ function Notes() {
     setNotes(newNotes)
   }
   return (
+
 
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">

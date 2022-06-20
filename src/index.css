@@ -21,6 +21,7 @@ body {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+
 }
 
 .notes-list {
@@ -109,7 +110,8 @@ textarea:focus {
 .all {
   text-align: center;
   background: #ccc;
-  height: 100vh;
+  height: 110vh;
+
 }
 
 .btn-game,
@@ -143,6 +145,7 @@ textarea:focus {
   background: red;
   cursor: pointer;
 }
+
 .btn-caro:hover,
 .btn-dice:hover {
   border: #0ba360 3px solid;

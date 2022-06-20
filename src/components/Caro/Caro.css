@@ -1,0 +1,50 @@
+ol,
+ul {
+  padding-left: 50px;
+}
+
+.banco-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.sukien {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 54px;
+  font-weight: bold;
+  line-height: 64px;
+  height: 64px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 64px;
+}
+
+.sukien:focus {
+  outline: none;
+}
+
+.kbd-navigation .sukien:focus {
+  background: #ddd;
+}
+.game{
+    position: relative;
+    background: pink;
+}
+.payler{
+position: absolute;
+top: 100px;
+right: 80px;
+font-size: 2em;
+font-weight: bold;
+}
+
+

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Notes from './Notes'
-import Games from './Games'
+import Notes from './components/Node/AppNotes'
+import Games from './components/Games'
 
 function App() {
     const [showNote, setShowNote] = useState(false)
@@ -16,7 +16,6 @@ function App() {
             </div>
         </div>
     )
-
 }
 
 export default App

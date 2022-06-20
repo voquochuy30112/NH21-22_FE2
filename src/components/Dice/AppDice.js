@@ -1,5 +1,4 @@
-
-import RollDice from './components/Dice/RollDice';
+import RollDice from './RollDice';
 
 
 function Dice() {

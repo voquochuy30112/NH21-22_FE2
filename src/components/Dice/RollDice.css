@@ -10,9 +10,10 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 30px;
 }
 
-.roll-dice button{
+.roll-dice .result{
     align-self: center;
     width: 15em;
     padding: 1em;
