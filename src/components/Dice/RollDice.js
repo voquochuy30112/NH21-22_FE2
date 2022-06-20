@@ -39,7 +39,9 @@ const RollDice = ({ sides }) => {
         setTimeout(() => {
             setState((prevState) => ({ ...prevState, rolling: false }))
         }, 1000)
+
         const tongDiem = score1[0] + score2[0] + score3[0];
+
         if (tongDiem % 2 === 0) {
             tienDatChan = tienDatChan * 2;
             setTien(tienBanDau + tienDatChan);
@@ -48,6 +50,7 @@ const RollDice = ({ sides }) => {
             datChan = false;
             datLe = false;
         }
+
         if (tongDiem % 2 !== 0) {
             tienDatLe = tienDatLe * 2;
             setTien(tienBanDau + tienDatLe);
@@ -56,7 +59,6 @@ const RollDice = ({ sides }) => {
             datChan = false;
             datLe = false;
         }
-
     }
 
     const handlePlayChan = () => {
@@ -64,21 +66,22 @@ const RollDice = ({ sides }) => {
         datChan = true;
         tienDatChan = tienDatChan + 100;
     }
+
     const handlePlayLe = () => {
         setTien(tienBanDau - 100);
         datLe = true;
         tienDatLe = tienDatLe + 100;
     }
+
     return (
         <>
             <div className="roll-dice">
-                <h2>Tổng tiền: {tienBanDau}</h2>
-                <h2>tien dat chan: {tienDatChan}</h2>
-                <h2>tien dat le : {tienDatLe}</h2>
+                <h2>Total money: {tienBanDau}</h2>
+                <h2 className="tienDatChan">Even bet: {tienDatChan}</h2>
+                <h2 className="tienDatLe">Odd bet : {tienDatLe}</h2>
                 <div className="chan-le">
-
-                    <div className="name-chan"><button onClick={handlePlayChan}><h2>Chẵn</h2></button></div>
-                    <div className="name-le"><button onClick={handlePlayLe}><h2>Lẽ</h2></button></div>
+                    <button className="name-chan" onClick={handlePlayChan}><h2>Even</h2></button>
+                   <button  className="name-le" onClick={handlePlayLe}><h2>Odd</h2></button>
                 </div>
                 <div className="reolldice-container">
                     <Die face={String(die1)} rolling={rolling} ></Die>
@@ -89,14 +92,14 @@ const RollDice = ({ sides }) => {
                 </div>
                 <button className="result" onClick={roll} disabled={rolling}>
                     {rolling ? "Rolling..." : "Roll Dice"}
-                    {console.log("check")};
-                    {console.log(totalScore)};
+                   
                 </button>
                 <h2>Total Score: {totalScore}</h2>
             </div>
         </>
     )
 }
+
 RollDice.defaultProps = {
     sides: [
         { one: 1 },
@@ -107,4 +110,5 @@ RollDice.defaultProps = {
         { six: 6 }
     ]
 }
+
 export default RollDice;

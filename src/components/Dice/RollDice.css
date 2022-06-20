@@ -4,6 +4,7 @@
     height: 75vh;
     background: pink;
     border: blue 5px solid;
+    position: relative;
 }
 
 .reolldice-container{
@@ -28,4 +29,26 @@
 .roll-dice button:hover{
     background-color: darkslateblue;
     cursor: pointer;
+}
+
+.tienDatChan{
+    position: absolute;
+    left: 70px;
+}
+.tienDatLe{
+    position: absolute;
+    right: 70px;
+}
+.name-chan, .name-le{
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+}
+.name-chan{
+    left: 80px; 
+    padding: 0 20px;    
+}
+.name-le{
+    right: 80px; 
+    padding: 0 30px; 
 }
