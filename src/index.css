@@ -31,7 +31,7 @@ body {
 }
 
 .note {
-  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  background-image: linear-gradient(to top, #0ba360 0%, #50a9f9 100%);
   white-space: pre-wrap;
   border-radius: 10px;
   padding: 1rem;
@@ -48,9 +48,10 @@ body {
 }
 
 textarea {
+  border-radius: 5px;
   border: none;
   resize: none;
-  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  background-image: linear-gradient(to top, #7cb6ea 0%, #50aaf9d5 100%);
 }
 
 .note.new {
@@ -66,15 +67,22 @@ textarea:focus {
   border: none;
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
-  border: solid 4px #308d46;
+  border: solid 3px #50a9f9;
 }
 
 .save:hover {
-  background-color: #308d46;
+  background-color: #50a9f9;
   cursor: pointer;
 }
 
 .delete-icon {
+  background-color: #50a9f9;
+  font-size: 1.3em;
+ border-radius: 5px;
+}
+.delete-icon:hover {
+  background-color: rgba(253, 74, 83, 0.496);
+  font-size: 1.3em;
   cursor: pointer;
 }
 
@@ -85,7 +93,7 @@ textarea:focus {
   border-radius: 10px;
   padding: 1.5em;
   margin-bottom: 10px;
-  border: solid 4px #308d46;
+  border: solid 3px #50a9f9;
 }
 
 .search input {
@@ -126,7 +134,7 @@ textarea:focus {
 
 .btn-game:hover,
 .btn-note:hover {
-  color: green;
+  color: red;
   cursor: pointer;
   background-color: rgb(182, 181, 181);
  

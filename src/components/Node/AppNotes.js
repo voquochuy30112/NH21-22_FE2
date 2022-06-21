@@ -4,24 +4,23 @@ import { nanoid } from 'nanoid'
 import Search from './Search';
 import Header from './Header';
 
-
 function Notes() {
 
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-      text: "This is my first note",
-      date: "03/11/2021"
+      text: "First note",
+      date: "05/6/2022"
     },
     {
       id: nanoid(),
-      text: "This is my second note",
-      date: "03/11/2021"
+      text: "Second note",
+      date: "07/6/2022"
     },
     {
       id: nanoid(),
-      text: "This is my third note",
-      date: "03/11/2021"
+      text: "Third notee",
+      date: "06/6/2022"
     },
 
   ]);
@@ -29,31 +28,16 @@ function Notes() {
 
   const [searchNote, setSearchNote] = useState('');
   const [darkMode, setDarkMode] = useState(false)
-  const [showGoToTop, setShowGoToTop] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= 150) {
-        //show
-        setShowGoToTop(true)
-      }
-      else {
-        //hide
-        setShowGoToTop(false)
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
-  })
-
-  useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'))
+    const savedNotes = JSON.parse(localStorage.getItem('notes-data'))
     if (savedNotes) {
       setNotes(savedNotes)
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('react-notes-app-data', JSON.stringify(notes))
+    localStorage.setItem('notes-data', JSON.stringify(notes))
   }, [notes])
 
   const addNote = (text) => {
@@ -73,25 +57,11 @@ function Notes() {
     setNotes(newNotes)
   }
   return (
-
-
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearch={setSearchNote} />
         <NotesList notes={notes.filter((note) => note.text.toLowerCase().includes(searchNote))} handleAddNote={addNote} handleDelete={deletingNote} />
-        {showGoToTop && (
-          <button
-            style={{
-              position: 'fixed',
-              right: 80,
-              background: 'red',
-              bottom: 20,
-            }}
-          >
-            Go to Top
-          </button>
-        )}
       </div>
     </div>
   )

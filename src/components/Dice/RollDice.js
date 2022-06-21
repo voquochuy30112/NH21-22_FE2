@@ -42,25 +42,25 @@ const RollDice = ({ sides }) => {
 
         const tongDiem = score1[0] + score2[0] + score3[0];
 
-     if (datChan === true || datLe === true){
-        if (tongDiem % 2 === 0) {
-            tienDatChan = tienDatChan * 2;
-          setTien(tienBanDau + tienDatChan);
-          setTienchan(0);
-          setTienLe(0);
-            datChan = false;
-            datLe = false;
-        }
+        if (datChan === true || datLe === true) {
+            if (tongDiem % 2 === 0) {
+                tienDatChan = tienDatChan * 2;
+                setTien(tienBanDau + tienDatChan);
+                setTienchan(0);
+                setTienLe(0);
+                datChan = false;
+                datLe = false;
+            }
 
-        if (tongDiem % 2 !== 0) {
-            tienDatLe = tienDatLe * 2;
-           setTien(tienBanDau + tienDatLe);
-           setTienchan(0);
-           setTienLe(0);
-            datChan = false;
-            datLe = false;
+            if (tongDiem % 2 !== 0) {
+                tienDatLe = tienDatLe * 2;
+                setTien(tienBanDau + tienDatLe);
+                setTienchan(0);
+                setTienLe(0);
+                datChan = false;
+                datLe = false;
+            }
         }
-     }
     }
 
     const handlePlayChan = () => {
@@ -72,7 +72,7 @@ const RollDice = ({ sides }) => {
     const handlePlayLe = () => {
         setTien(tienBanDau - 100);
         datLe = true;
-       setTienLe(tienDatLe + 100);
+        setTienLe(tienDatLe + 100);
     }
 
     return (
