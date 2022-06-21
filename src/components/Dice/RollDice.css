@@ -3,8 +3,8 @@
     flex-flow: column nowrap;
     height: 75vh;
     background: pink;
-    border: blue 5px solid;
     position: relative;
+    border: #50a9f9 5px solid;
 }
 
 .reolldice-container{
@@ -22,12 +22,13 @@
     border: 0px;
     border-radius: 10px;
     color: #fff;
-    background-color: orchid;
+    background-color: #fd4a52;
     margin-top: 3em;
 }
 
 .roll-dice button:hover{
-    background-color: darkslateblue;
+    background-color: rgba(253, 74, 83, 0.496);
+   
     cursor: pointer;
 }
 
@@ -39,16 +40,21 @@
     position: absolute;
     right: 70px;
 }
-.name-chan, .name-le{
+.btn-chan, .btn-le{
     position: absolute;
-    background: red;
-    border-radius: 50%;
+    background-color: #fd4a52;
+    border-radius: 10px;
+    color: #fff;
+   
 }
-.name-chan{
+.btn-chan{
     left: 80px; 
-    padding: 0 20px;    
+    padding: 0 20px;   
+    border: 0px; 
+    
 }
-.name-le{
+.btn-le{
+    border: 0px;
     right: 80px; 
     padding: 0 30px; 
 }

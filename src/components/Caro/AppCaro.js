@@ -70,11 +70,11 @@ export default function AppCaro() {
 
         <div>{status}</div>
         <div className="luot-choi">
-          <p>Số lượt chơi <span>{luotChoi}</span></p>
+          <p>Round: <span>{luotChoi}</span></p>
         </div>
-        <div className="payler-X">Người chơi X: {nguoiChoiX}</div>
-        <div className="hoa">Hòa: {luotHoa}</div>
-        <div className="payler-O">Người chơi O: {nguoiChoiO}</div>
+        <div className="payler-X">Player X: {nguoiChoiX}</div>
+        <div className="hoa">Draw: {luotHoa}</div>
+        <div className="payler-O">Player O: {nguoiChoiO}</div>
       </div>
 
 
@@ -83,9 +83,9 @@ export default function AppCaro() {
   } else {
 
     if (luotChoi % 2 === 0) {
-      status = "player: " + (xIsNext ? "X" : "O");
+      status = "Player: " + (xIsNext ? "X" : "O");
     } else {
-      status = "player: " + (xIsNext ? "O" : "X");
+      status = "Player: " + (xIsNext ? "O" : "X");
     }
 
 
@@ -103,11 +103,11 @@ export default function AppCaro() {
 
       <div className="payler"><div>{status}</div>
         <div className="luot-choi">
-          <p>Số lượt chơi <span>{luotChoi}</span></p>
+          <p>Round <span>{luotChoi}</span></p>
         </div>
-        <div className="payler-X">Người chơi X: {nguoiChoiX}</div>
-        <div className="hoa">Hòa: {luotHoa}</div>
-        <div className="payler-O">Người chơi O: {nguoiChoiO}</div>
+        <div className="payler-X">Player X: {nguoiChoiX}</div>
+        <div className="hoa">Draw: {luotHoa}</div>
+        <div className="payler-O">Player O: {nguoiChoiO}</div>
       </div>
 
 

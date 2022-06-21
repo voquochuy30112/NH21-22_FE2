@@ -116,21 +116,24 @@ textarea:focus {
 
 .btn-game,
 .btn-note {
-  border: #0ba360 3px solid;
-  margin-right: 40px;
+  margin: 2px 25px 2px 10px;
   font-weight: bold;
   padding: 0px 20px;
+  border-radius: 10%;
+  background-color: rgb(182, 181, 181);
+  border: 0;
 }
 
 .btn-game:hover,
 .btn-note:hover {
-  background: #3cba92;
-  color: red;
+  color: green;
   cursor: pointer;
+  background-color: rgb(182, 181, 181);
+ 
 }
 
 .games {
-  background: blue;
+  background: #50a9f9;
   border-radius: 10px;
   margin-top: 5px;
 }
@@ -138,18 +141,16 @@ textarea:focus {
 .btn-caro,
 .btn-dice {
   margin: 10px;
-  border: #0ba360 3px solid;
-  border-radius: 50%;
+  border-radius: 5px;
   font-weight: bold;
   padding: 0px 20px;
-  background: red;
+  background-color: #fd4a52;
   cursor: pointer;
+  border: 0;
 }
 
 .btn-caro:hover,
 .btn-dice:hover {
-  border: #0ba360 3px solid;
-  background: #3cba92;
-  color: red;
+  background-color: rgba(253, 74, 83, 0.496);
   cursor: pointer;
 }

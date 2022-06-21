@@ -38,6 +38,7 @@ ul {
 .game{
     position: relative;
     background: pink;
+    border: #50a9f9 5px solid;
 }
 .payler{
 position: absolute;
