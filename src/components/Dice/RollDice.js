@@ -7,6 +7,7 @@ import Die from './Die';
 let datChan = false;
 let datLe = false;
 
+
 const RollDice = ({ sides }) => {
     const [state, setState] = useState({
         die1: 'one',
@@ -18,7 +19,6 @@ const RollDice = ({ sides }) => {
     const [tienBanDau, setTien] = useState(1000);
     const [tienDatChan, setTienchan] = useState(0);
     const [tienDatLe, setTienLe] = useState(0);
-
     const { die1, die2, die3, rolling, totalScore } = state;
 
     const roll = () => {
@@ -42,10 +42,12 @@ const RollDice = ({ sides }) => {
 
         const tongDiem = score1[0] + score2[0] + score3[0];
 
+        
         if (datChan === true || datLe === true) {
             if (tongDiem % 2 === 0) {
-                tienDatChan = tienDatChan * 2;
-                setTien(tienBanDau + tienDatChan);
+                let tienThuong = tienDatChan * 2;
+                setTienchan(tienThuong )
+                setTien(tienBanDau + tienThuong);
                 setTienchan(0);
                 setTienLe(0);
                 datChan = false;
@@ -53,38 +55,50 @@ const RollDice = ({ sides }) => {
             }
 
             if (tongDiem % 2 !== 0) {
-                tienDatLe = tienDatLe * 2;
-                setTien(tienBanDau + tienDatLe);
+                
+                
+           let tienThuong = tienDatLe * 2;
+              setTienLe(tienThuong)
+                setTien(tienBanDau + tienThuong);
                 setTienchan(0);
                 setTienLe(0);
                 datChan = false;
                 datLe = false;
             }
-        }
-    }
 
+        }
+        
+    }
+    
+   
+    
     const handlePlayChan = () => {
-        setTien(tienBanDau - 100);
-        datChan = true;
-        setTienchan(tienDatChan + 100);
+        if (tienBanDau > -1000) {
+            setTien(tienBanDau - 100);
+            datChan = true;
+            setTienchan(tienDatChan + 100);
+        }
+
     }
 
     const handlePlayLe = () => {
-        setTien(tienBanDau - 100);
-        datLe = true;
-        setTienLe(tienDatLe + 100);
+        if (tienBanDau > -1000) {
+            setTien(tienBanDau - 100);
+            datLe = true;
+            setTienLe(tienDatLe + 100);
+    
+        }
     }
 
     return (
         <>
-            <div className="roll-dice"
-            >
+            <div className="roll-dice">
                 <h2>Total money: {tienBanDau}</h2>
                 <h2 className="tienDatChan">Even bet: {tienDatChan}</h2>
                 <h2 className="tienDatLe">Odd bet : {tienDatLe}</h2>
                 <div className="chan-le">
-                    <button className="btn-chan" onClick={handlePlayChan}><h3>Even</h3></button>
-                    <button className="btn-le" onClick={handlePlayLe}><h3>Odd</h3></button>
+                    <button className="btn-chan" onClick={handlePlayChan}><h2>Even</h2></button>
+                    <button className="btn-le" onClick={handlePlayLe}><h2>Odd</h2></button>
                 </div>
                 <div className="reolldice-container">
                     <Die face={String(die1)} rolling={rolling} ></Die>
@@ -95,6 +109,7 @@ const RollDice = ({ sides }) => {
                 </div>
                 <button className="result" onClick={roll} disabled={rolling}>
                     {rolling ? "Rolling..." : "Roll Dice"}
+
                 </button>
                 <h2>Total Score: {totalScore}</h2>
             </div>
